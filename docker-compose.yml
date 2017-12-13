@@ -11,7 +11,7 @@ services:
     - /srv/docker/redmine/postgresql:/var/lib/postgresql
 
   redmine:
-    image: sameersbn/redmine:3.3.2-1
+    image: sameersbn/redmine:3.4.2
     depends_on:
     - postgresql
     environment:
@@ -34,9 +34,9 @@ services:
 
     - REDMINE_CONCURRENT_UPLOADS=2
 
-    - REDMINE_BACKUP_SCHEDULE=
-    - REDMINE_BACKUP_EXPIRY=
-    - REDMINE_BACKUP_TIME=
+    - REDMINE_BACKUP_SCHEDULE=daily
+    - REDMINE_BACKUP_EXPIRY=259200
+    - REDMINE_BACKUP_TIME=01:00
 
     - SMTP_ENABLED=true
     - SMTP_METHOD=smtp
@@ -55,6 +55,8 @@ services:
     - IMAP_PASS=password
     - IMAP_SSL=true
     - IMAP_INTERVAL=30
+    
+    - NGINX_MAX_UPLOAD_SIZE=4096m
 
     ports:
     - "10083:80"
