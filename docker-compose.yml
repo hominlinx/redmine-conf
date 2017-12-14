@@ -43,8 +43,8 @@ services:
     - SMTP_DOMAIN=smtp.ym.163.com
     - SMTP_HOST=smtp.ym.163.com
     - SMTP_PORT=25
-    - SMTP_USER=redmine@shfangyan.cn
-    - SMTP_PASS=yuanguang
+    - SMTP_USER= #redmine@shfangyan.cn
+    - SMTP_PASS= #yuanguang
     - SMTP_STARTTLS=true
     - SMTP_AUTHENTICATION=:login
 
