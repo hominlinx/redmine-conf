@@ -11,7 +11,7 @@ services:
     - /srv/docker/redmine/postgresql:/var/lib/postgresql
 
   redmine:
-    image: sameersbn/redmine:3.4.2
+    image: sameersbn/redmine:3.3.2-1
     depends_on:
     - postgresql
     environment:
@@ -34,7 +34,7 @@ services:
 
     - REDMINE_CONCURRENT_UPLOADS=2
 
-    - REDMINE_BACKUP_SCHEDULE=daily
+    - REDMINE_BACKUP_SCHEDULE=
     - REDMINE_BACKUP_EXPIRY=259200
     - REDMINE_BACKUP_TIME=01:00
 
@@ -61,4 +61,4 @@ services:
     ports:
     - "10083:80"
     volumes:
-    - /srv/docker/redmine/redmine:/home/redmine/data
+    - /mnt/srv/docker/redmine/redmine:/home/redmine/data
